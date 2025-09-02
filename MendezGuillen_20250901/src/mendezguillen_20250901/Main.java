@@ -28,7 +28,7 @@ public class Main {
         
         
         //SE INSTANCIA LA MATRIZ DEL TIPO INTEGER//
-        int[][] matriz = new int [3][3];
+        int[][] matriz = new int[3][3];
         int suma = 0;  //VARIABLE PARA LA SUMA DE VALORES DIGITADOS//
         int total_elementos = 0; //CONTADOR DE ELEMENTOS DE LA MATRIZ//
         double promedio = 0d; //CALCULO DEL PROMEDIO DE EDADES DIGITADAS//
@@ -38,14 +38,14 @@ public class Main {
         
         //SE RECORRE PRIMERO LAS FILAS CON UNA ESTRUCTURA DE CONTROL ITERATIVA DE TIPO FOR//
         for (int i=0; i<matriz.length; i++){
-        total_elementos = +matriz[i].length;
+        total_elementos += matriz[i].length;
             
         
         //SE RECORRE LAS COLUMNAS DE LA MATRIZ CON UNA ESTRUCTURA DE CONTROL ITERATIVA DE TIPO FOR...//
         //DEBIDO A QUE DEBEMOS OBTENER EL VALOR DE CADA CELDA (FILA Y COLUMNA)//
             for (int j = 0; j < matriz[i].length; j++){
                 
-                //SE VUELVE UN ARRAY----^//
+                //SE VUELVE UN ARRAY--^//
                 
                //SE IMPRIME LA PETICION AL USUARIO PARA EL INGRESO DE DATOS//
                 System.out.println("Elemento [ " +i+ "] [" +j+ "]");
@@ -61,22 +61,25 @@ public class Main {
         System.out.println("Matriz ingresada: ");
         
         //SE RECORREN LAS FILAS DE LA MATRIZ//
-        for (int x = 0; x < matriz.length; x++){
+        for(int x = 0; x < matriz.length; x++){
+            
+            //SE RECOREN LAS COLUMNAS DE LA MATRIZ//
+            for(int y = 0; y < matriz[x].length; y++){
             
             //SE VUELVE UN ARRAY---- ^//
             //SE IMPRIME EL VALOR DE CADA CELDA DE LA MATRIZ (FILA, COLUMNA)//
             //FILA: x COLUMNA: y//
-            System.out.print(matriz[x][y]+ " ");
+            System.out.print(matriz[x][y]+" ");
             
             //SE SUMAN LOS VALORES DIGITADOS DE CADA CELDA//
-            suma += matriz [x][y];
+            suma += matriz[x][y];
         }
         
         //SE IMPRIME UN SALTO DE LINEA//
         System.out.println();
-    
+        }
         //CALCULO DE LOS VALORES//
-        promedio = (double)suma/total_elementos;
+        promedio = (double) suma/total_elementos;
         System.out.println(suma+" es la sumatoria total de elementos, la cantidad de elementos digitados es de: "+total_elementos);
         System.out.println("El promedio de edad es: "+promedio);
         
@@ -84,5 +87,4 @@ public class Main {
         //SE CIERRA EL USO DE LA CLASE Scanner//
     scanner.close();    
     }
-    
 }
